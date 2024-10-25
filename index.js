@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
-const dotenv=require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const urlRoute = require("./routes/url");
 const staticRoute = require("./routes/staticRouter");
 const { connectToMongoDB } = require("./connect");
@@ -8,7 +9,8 @@ const URL = require("./models/url");
 const app = express();
 const PORT = process.env.PORT || 8001; 
 
-connectToMongoDB("mongodb+srv://deepanshunegi98:dsL63fIhFC5aKLuY@cluster0.h5f4x.mongodb.net/urlShortner?retryWrites=true&w=majority")
+
+connectToMongoDB(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
