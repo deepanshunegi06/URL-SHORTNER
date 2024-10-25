@@ -4,7 +4,7 @@ const crypto = require('crypto');
 
 
 function generateShortID() {
-  // Generate a 2-byte random value and convert it to a hex string (4 characters)
+  // Generate a 2-byte random value and convert it to a hex string (4 characters)=
   return crypto.randomBytes(2).toString('hex');
 }
 
