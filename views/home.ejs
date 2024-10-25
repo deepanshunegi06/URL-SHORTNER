@@ -13,13 +13,16 @@
         <h1>URL Shortener</h1>
 
         <!-- URL Generated Message -->
-        <% if (id) { %>
-            <p class="generated-url">URL Generated: 
-                <a href="<%= protocol %>://<%= hostname %>/url/<%= id %>" target="_blank">
-                    <%= protocol %>://<%= hostname %>/url/<%= id %>
-                </a>
-            </p>
-        <% } %>
+        <!-- URL Generated Message -->
+<% if (locals.id) { %>
+    <p class="generated-url">
+        URL Generated:
+        <a href="http://<%= host %>/url/<%= id %>" target="_blank">
+            http://<%= host %>/url/<%= id %>
+        </a>
+    </p>
+<% } %>
+
 
         <!-- URL Input Form -->
         <form method="POST" action="/url">
